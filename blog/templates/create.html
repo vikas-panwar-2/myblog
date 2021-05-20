@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block content %}
+
+<!-- <form action="." method="POST">
+ 
+    {% csrf_token %}
+
+        <div >
+            <input  type="text" name="title" placeholder="Title">
+        </div>
+       
+
+        <textarea class="form-control form-control1" name='content' rows="2" cols="40" required>
+            Content
+        </textarea>
+
+        <center><button type="submit" >Post</button></center>
+</form> -->
+
+
+<div class="container mt-5">
+  <div class="card text-center">
+    <div class="card-header" style="color: rgb(34, 149, 243); font-weight: bold;font-size:xx-large;">
+      Create Post
+    </div>
+    <div class="card-body">
+        <form action="." method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="exampleFormControlInput1" style="color: rgb(22, 23, 24); font-weight: bold;font-size:x-large;">Title</label>
+              <input type="text" name="title"  id="exampleFormControlInput1" style="width: 100%;">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1" style="color: rgb(22, 23, 24); font-weight: bold;font-size:x-large;">Content</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='content'></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Post</button>
+          </form>
+    </div>
+    <div class="card-footer text-muted">
+    <a href="/list" class="btn btn-dark ml-3">Go Back</a>
+    </div>
+  </div>
+</div>
+{% endblock content %}

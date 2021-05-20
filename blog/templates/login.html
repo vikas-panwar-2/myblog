@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- <form class="login100-form validate-form" >
+    <span class="login100-form-title p-b-34">
+        Account Login
+    </span>
+
+    {% csrf_token %}
+
+        <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
+            <input id="first-name" class="input100" type="text" name="username" placeholder="User name">
+            <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
+            <input class="input100" type="password" name="pass" placeholder="Password">
+            <span class="focus-input100"></span>
+        </div>
+
+        {% for message in messages %}
+           <p style="color: lightcoral;" class="container-login100-form-btn">{{message}}</p>
+        {% endfor %}
+    
+        <div class="container-login100-form-btn">
+            <button class="login100-form-btn" type="submit">
+                Sign in
+            </button>
+        </div>
+
+   
+    <div class="w-full text-center">
+        <a href="../register" class="txt3">
+            Sign Up
+        </a>
+    </div>
+</form > -->
+
+<div class="login-form" >
+    <form action="." method="POST">
+        {% csrf_token %}
+        <h2 class="text-center">Log in</h2>       
+        <div class="form-group">
+            <input type="text" name="username" class="form-control" placeholder="Username" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" name="pass" class="form-control" placeholder="Password" required="required">
+        </div>
+        {% for message in messages %}
+           <p style="color: lightcoral;" class="container-login100-form-btn">{{message}}</p>
+        {% endfor %}
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        </div>      
+    </form>
+    <p class="text-center"><a href="../register">Create an Account</a></p>
+</div>
+{% endblock %}
